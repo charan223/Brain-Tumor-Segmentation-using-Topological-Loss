@@ -1,0 +1,37 @@
+[data]
+data_root         = /home/AP85890/brats17/data/Brats18TrainingData
+save_folder       = result17
+data_names        = config17/test_names_temp.txt
+modality_postfix  = [flair, t1, t1ce, t2]
+file_postfix      = nii.gz
+
+[network1ax]
+net_type            = MSNet
+net_name            = MSNet_WT32
+downsample_twice    = True
+data_shape          = [19, 180, 160, 4]
+label_shape         = [11, 180, 160, 1]
+class_num           = 2
+model_file          = model17/msnet_wt32_20000.ckpt
+
+[network1sg]
+net_type            = MSNet
+net_name            = MSNet_WT32sg
+downsample_twice    = True
+data_shape          = [19, 160, 180, 4]
+label_shape         = [11, 160, 180, 1]
+class_num           = 2
+model_file          = model17/msnet_wt32sg_20000.ckpt
+
+[network1cr]
+net_type            = MSNet
+net_name            = MSNet_WT32cr
+downsample_twice    = True
+data_shape          = [19, 160, 160, 4]
+label_shape         = [11, 160, 160, 1]
+class_num           = 2
+model_file          = model17/msnet_wt32cr_20000.ckpt
+
+[testing]
+test_slice_direction = all
+whole_tumor_only     = True

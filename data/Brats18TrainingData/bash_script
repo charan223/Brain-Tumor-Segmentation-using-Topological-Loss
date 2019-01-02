@@ -1,0 +1,5 @@
+@echo off
+pushd D:
+for /f "tokens=* delims=" %%a in ('type /home/AP85890/brats17/config17/test_names.txt') do xcopy /hrkvy "HGG\%%a" "test"
+popd
+pause
