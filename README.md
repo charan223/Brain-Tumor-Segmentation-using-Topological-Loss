@@ -25,6 +25,8 @@ pip install niftynet
 
 * BraTS 2015 or 2017 dataset. Data can be downloaded from http://braintumorsegmentation.org/
 
+## TO USE LOSSES MENTIONED IN OUR PAPER, USE modified_train.py INSTEAD OF train.py
+
 # How to use
 ## 1, Prepare data
 * Download BraTS dataset, and uncompress the training and tesing zip files. For example, the training set will be in `data_root/BRATS2015_Training` or `data_root/Brats17TrainingData` and the validation set will be in `data_root/BRATS2015_Validation` or `data_root/Brats17ValidationData`.
@@ -77,7 +79,7 @@ python util/rename_variables.py
 
 You may need to edit this file to set different parameters. As an example for Brats 2015, after running this command, you will see a model named `model15/msnet_tc32sg_init` that is copied from `model15/msnet_tc32_20000.ckpt`. Then just set **start_iteration=1** and **model_pre_trained=model15/msnet_tc32sg_init** in `config15/train_tc_sg.txt`. 
 
-## TO USE OUR TRAINING FILE, USE modified_train.py instead of train.py
+
 
 ## 4, How to test
 Similar to 'Use pre-trained models', write a configure file that is similar to `config15/test_all_class.txt` or `config17/test_all_class.txt` and 
