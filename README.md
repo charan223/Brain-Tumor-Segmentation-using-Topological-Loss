@@ -1,3 +1,8 @@
+Source code for this is taken from below site:
+https://github.com/taigw/brats17
+
+We have updated this code with our new losses
+
 # Overview
 This repository provides source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1].
 
