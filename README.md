@@ -42,23 +42,23 @@ The following commands are examples for BraTS 2017. However, you can edit the co
 * Train models for whole tumor in axial, sagittal and coronal views respectively. Run: 
 
 ```bash
-python train.py config17/train_wt_ax.txt
-python train.py config17/train_wt_sg.txt
-python train.py config17/train_wt_cr.txt
+python modified_train.py config17/train_wt_ax.txt
+python modified_train.py config17/train_wt_sg.txt
+python modified_train.py config17/train_wt_cr.txt
 ```
 * Train models for tumor core in axial, sagittal and coronal views respectively. Run: 
 
 ```bash
-python train.py config17/train_tc_ax.txt
-python train.py config17/train_tc_sg.txt
-python train.py config17/train_tc_cr.txt
+python modified_train.py  config17/train_tc_ax.txt
+python modified_train.py  config17/train_tc_sg.txt
+python modified_train.py  config17/train_tc_cr.txt
 ```
 * Train models for enhancing core in axial, sagittal and coronal views respectively. Run: 
 
 ```bash
-python train.py config17/train_en_ax.txt
-python train.py config17/train_en_sg.txt
-python train.py config17/train_en_cr.txt
+python modified_train.py  config17/train_en_ax.txt
+python modified_train.py  config17/train_en_sg.txt
+python modified_train.py  config17/train_en_cr.txt
 ```
 
 * To save the time for training, you may use the modals in axial view as initalizations for sagittal and coronal views. Copy variales in axial view to those in sagittal or coronal view by running:
@@ -72,7 +72,7 @@ You may need to edit this file to set different parameters. As an example for Br
 
 
 ## 3, How to test
-Similar to 'Use pre-trained models', write a configure file that is similar to `config15/test_all_class.txt` or `config17/test_all_class.txt` and 
+Write a configure file that is similar to `config15/test_all_class.txt` or `config17/test_all_class.txt` and 
 set the value of model_file to your own model files. Run:
 ```bash
 python test.py your_own_config_for_test.txt
@@ -83,5 +83,5 @@ Calcuate dice scores between segmentation and the ground truth, run:
 ```bash
 python util/evaluation.py
 ```
-You may need to edit this file to  specify folders for segmentation and ground truth. 
+You may need to edit this file to specify folders for segmentation and ground truth. 
 
