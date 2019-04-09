@@ -1,5 +1,6 @@
 # Topology Conscious Neural Networks for Brain Tumor Segmentation
-This is a Tensorflow implementation of Topology and Smoothing losses. Source Code is taken from [https://github.com/taigw/brats17] (here)
+This is a Tensorflow implementation of Topology and Smoothing losses. Source Code is taken from [here](https://github.com/taigw/brats17)
+
 # Overview
 This repository provides source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1].
 
@@ -27,26 +28,13 @@ pip install niftynet
 
 * BraTS 2015 or 2017 dataset. Data can be downloaded from http://braintumorsegmentation.org/
 
-## TO USE LOSSES MENTIONED IN OUR PAPER, USE modified_train.py INSTEAD OF train.py
 
 # How to use
 ## 1, Prepare data
 * Download BraTS dataset, and uncompress the training and tesing zip files. For example, the training set will be in `data_root/BRATS2015_Training` or `data_root/Brats17TrainingData` and the validation set will be in `data_root/BRATS2015_Validation` or `data_root/Brats17ValidationData`.
 
-## 2, Use pre-trained models to segment images
-* To segment BraTS 2015 data, run:
 
-```bash
-python test.py config15/test_all_class.txt
-```
-* To segment BraTS 2017 data, run:
-
-```bash 
-python test.py config17/test_all_class.txt
-```
-
-
-## 3, How to train
+## 2, How to train
 The trainig process needs 9 steps, with axial view, sagittal view, coronal view for whole tumor, tumor core, and enhancing core, respectively.
 
 The following commands are examples for BraTS 2017. However, you can edit the corresponding `*.txt` files for different configurations.
@@ -54,23 +42,23 @@ The following commands are examples for BraTS 2017. However, you can edit the co
 * Train models for whole tumor in axial, sagittal and coronal views respectively. Run: 
 
 ```bash
-python train.py config17/train_wt_ax.txt
-python train.py config17/train_wt_sg.txt
-python train.py config17/train_wt_cr.txt
+python modified_train.py config17/train_wt_ax.txt
+python modified_train.py config17/train_wt_sg.txt
+python modified_train.py config17/train_wt_cr.txt
 ```
 * Train models for tumor core in axial, sagittal and coronal views respectively. Run: 
 
 ```bash
-python train.py config17/train_tc_ax.txt
-python train.py config17/train_tc_sg.txt
-python train.py config17/train_tc_cr.txt
+python modified_train.py  config17/train_tc_ax.txt
+python modified_train.py  config17/train_tc_sg.txt
+python modified_train.py  config17/train_tc_cr.txt
 ```
 * Train models for enhancing core in axial, sagittal and coronal views respectively. Run: 
 
 ```bash
-python train.py config17/train_en_ax.txt
-python train.py config17/train_en_sg.txt
-python train.py config17/train_en_cr.txt
+python modified_train.py  config17/train_en_ax.txt
+python modified_train.py  config17/train_en_sg.txt
+python modified_train.py  config17/train_en_cr.txt
 ```
 
 * To save the time for training, you may use the modals in axial view as initalizations for sagittal and coronal views. Copy variales in axial view to those in sagittal or coronal view by running:
@@ -83,19 +71,17 @@ You may need to edit this file to set different parameters. As an example for Br
 
 
 
-## 4, How to test
-Similar to 'Use pre-trained models', write a configure file that is similar to `config15/test_all_class.txt` or `config17/test_all_class.txt` and 
+## 3, How to test
+Write a configure file that is similar to `config15/test_all_class.txt` or `config17/test_all_class.txt` and 
 set the value of model_file to your own model files. Run:
 ```bash
 python test.py your_own_config_for_test.txt
 ```
 
-## 5, Evaluation
+## 4, Evaluation
 Calcuate dice scores between segmentation and the ground truth, run:
 ```bash
 python util/evaluation.py
 ```
-You may need to edit this file to  specify folders for segmentation and ground truth. 
+You may need to edit this file to specify folders for segmentation and ground truth. 
 
-# Copyright
-* Copyright (c) 2017-2018, University College London. All rights reserved.
