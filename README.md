@@ -1,8 +1,5 @@
-Source code for this is taken from below site:
-https://github.com/taigw/brats17
-
-We have updated this code with our new losses
-
+# Topology Conscious Neural Networks for Brain Tumor Segmentation
+This is a Tensorflow implementation of Topology and Smoothing losses. Source Code is taken from [here] (https://github.com/taigw/brats17)
 # Overview
 This repository provides source code and pre-trained models for brain tumor segmentation with BraTS dataset. The method is detailed in [1].
 
