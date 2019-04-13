@@ -1,4 +1,4 @@
-# Topology Conscious Neural Networks for Brain Tumor Segmentation
+# Topology Aware Neural Networks for Brain Tumor Segmentation
 This is a Tensorflow implementation of Topology and Smoothing losses. Source Code is taken from [here](https://github.com/taigw/brats17)
 
 # Overview
